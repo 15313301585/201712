@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1、写出下面代码输出的结果
+
+var a=function(){return false;}
+var b=function(){return true;}
+~function(){
+	if([]==![] && b()){
+		var a=function(){
+			return true;
+		}
+		b=function(){
+			return false;
+		}
+	}
+}();
+console.log(a());
+console.log(b());
+
+
+    //2、写出下面代码输出的结果
+
+var a=12,b=13,c=14;
+~function(a,b){
+	b=b||0;
+	arguments[0]=100;
+	var b=c=200;
+
+	console.log(a);
+	console.log(arguments[1]);
+}(a);
+console.log(a);
+console.log(b);
+console.log(c);
+
+
+    //3、写出下面代码输出的结果
+
+var i=10;
+function fn(){
+	i+=2;
+	return function(n){
+		console.log(n+ --i);
+	}
+}
+var f=fn(10);
+f(5);
+fn(10)(5);
+fn(10)(6);
+f(6)
+
+
+   // 4、写出下面代码输出的结果
+
+var num=10;
+var obj={num:20};
+obj.fn=(function(num){
+	this.num+=num;
+	num++;
+	return function(n){
+		this.num+=n;
+		num-=n;
+		console.log(num);
+	}
+}).call(obj,num);
+var fn=obj.fn;
+fn(10);
+obj.fn(20);
+console.log(window.num);
+console.log(obj.num);
+
+
+   // 5、写出下面代码输出的结果
+
+var num=10;
+function Foo() {
+	var num=20;
+	this.num=30;
+    return this;
+}
+Foo.getName=function(){
+    console.log(this.num);
+};
+Foo.prototype.getName=function(){
+    this.num=40;
+    console.log(this.num);
+};
+function getName(){
+    console.log(this.num);
+}
+
+Foo.getName();
+getName();
+Foo().getName();
+getName();
+new Foo.getName();
+new Foo().getName();
+new new Foo().getName();
+
+
+  //  6、实现如下需求
+
+var ary=[12,13,14,23,14,12,15,23,15,14];
+//=>当我执行ary.distinct().sort()
+//=>原始的ary变为：[12,13,14,15,23]
+
+
+   // 7、谈谈你对闭包的理解？
+
+
+
+
+
+</script>
+</body>
+</html>

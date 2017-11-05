@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var oList=document.getElementsByTagName("*");
+//    var ary=[].slice.call(oList);//在IE6-8不兼容,会报错（Array.prototype.slice:"this"不是JavaScript对象），但是ARG这个类数组在所有浏览器中使用上述办法转换为数组都兼容，只有元素集合或者节点集合这种类数组才不兼容低版本浏览器
+
+
+
+
+
+
+
+//    try catch
+
+    //console.log(a); //报错
+    //var b=13;
+    //console.log(b);
+
+
+    try{
+        console.log(a);
+    }catch(e){
+       //try catch可以捕获到浏览器的异常信息
+       //  1.我们可以知道try中代码哪一块报错了，报错信息是什么（如果try中代码报错了，会自动进入catch中，执行catch中的代码）
+//        console.dir（e）；//存储了报错信息
+//        2.阻止浏览器异常信息抛出（也就是不会在控制台报红色错误），即使当前的代码报错了，也不会影响后面的代码执行
+    }
+    var b=13;
+    console.log(b);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+DOM映射机制：
+    在js中获取到的元素对象或者元素集合一般都和页面中的HTML结构存在映射关系（一个变另外一个也跟着变）
+-->
+<script>
+
+
+
+
+    //映射原理：浏览器在渲染页面的时候给每一个元素都设置了很多的"内置属性"（包含样式的），当我们在JS中把堆内存中的某一个内置属性的值修改了，大部分情况下，浏览器都会监听到你的修改，然后按照最新修改的值重新渲染页面的元素
+
+    //通过querySelectorAll获取到的元素集合（节点集合）不存在DOM映射机制，因为获取到的集合不是标准的NodeList，而是属于StaticNodeList（静态的集合）
+
+   //  操作真实的DOM在项目中是比较消耗性能的（尽量减少）
+</script>
+</body>
+</html>

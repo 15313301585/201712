@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body,div,ul,li{
+            margin: 0;
+            padding: 0;
+            font-family: 微软雅黑;
+            font-size: 14px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        #list{
+            margin: 10px auto;
+            padding: 10px;
+            width: 500px;
+            border: 1px solid red;
+            border-radius: 10px;
+            /*background: -webkit-linear-gradient(top left,red,green,blue);*/
+        }
+        #list li{
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .c1{
+            background: palevioletred;
+        }
+        .c2{
+            background: lightblue;
+        }
+        .c3{
+            background: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div id="list">
+        <ul>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+            <li>44444444</li>
+            <li>55555555</li>
+            <li>66666666</li>
+            <li>11111111</li>
+            <li>22222222</li>
+            <li>33333333</li>
+            <li>44444444</li>
+            <li>55555555</li>
+            <li>66666666</li>
+        </ul>
+    </div>
+    <script>
+        var oList=document.getElementById("list");
+        var oLis=oList.getElementsByTagName("li");
+
+        for(var i=0;i<oLis.length;i++){
+            //i=0 第一次循环 获取第一个li  oLis[0]
+            //i=1 第二次循环 获取第二个li  oLis[1]
+            //....
+            var oLi=oLis[i];//每一次循环的时候在类数组中把对应的li取出来
+            i%2===0?(oLi.className="c1",oLi.aa="c1"):(oLi.className="c2",oLi.aa="c2");
+                //因为每一个li都是对象数据类型的，那么应用这个思想，我们给每一个li增加一个自定义的属性名aa，属性值就是当前li的className的值
+
+
+            oLi.onmousemove=function () {
+                this.className="c3";
+            };
+            oLi.onmouseout=function () {
+                this.className=this.aa;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
